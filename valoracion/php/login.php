@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 	</head>
 	<body>
-<a href="../index.html"><i class="fa fa-chevron-left" aria-hidden="true" title='Volver'></i></a>
+<a href="../index.html"><i class="fa fa-chevron-left fa-2x" aria-hidden="true" title='Volver'></i></a>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -28,15 +28,15 @@
 					<section id="intro" class="main">
 													
 		<div class="formulario"> 
-		<h2>Inicia Sesión</h2>
+		<h2>Inicia Sessió</h2>
 			<form name="formulario" action="login.proc.php" method="POST">
 				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
-				<input type="text" name="usuario" placeholder="Usuario" size="15" maxlength="20" required=""><br/>
+				<input type="text" name="usuario" placeholder="Usuari" size="15" maxlength="20" required=""><br/>
 				
 				<i class="fa fa-key fa-2x" aria-hidden="true"></i>
-				<input type="password" name="password" placeholder="Contrasenya" size="15" maxlength="30" required=""><br/>
+				<input type="password" name="password" placeholder="Clau" size="15" maxlength="30" required=""><br/>
 				<br/>				
-				<input type="submit" value="Login" class="enviar">
+				<input type="submit" value="Accedeix" class="enviar">
 			</form>
 		</div>
 					</section>

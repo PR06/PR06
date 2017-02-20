@@ -2123,7 +2123,7 @@
 	input[type="password"],
 	input[type="email"],
 	select {
-		height: 2.75em;
+		height: 2.50em;
 	}
 
 	textarea {
@@ -3008,7 +3008,7 @@
 		-webkit-align-items: center;
 		-ms-align-items: center;
 		align-items: center;
-		margin: 0 0 2em 0;
+		margin: 0 0 0em 0;
 	}
 
 		.spotlight .content {
@@ -3028,8 +3028,8 @@
 
 		.spotlight .image {
 			display: inline-block;
-			margin-left: 6.5em;
-			padding: 0.65em;
+			margin-left: 5em;
+			padding: 0.55em;
 			border-radius: 100%;
 			border: solid 1px;
 		}
@@ -3654,8 +3654,8 @@
 /* Wrapper */
 
 	#wrapper {
-		width: 64em;
-		max-width: calc(100% - 4em);
+		width: 60em;
+		max-width: calc(80% - 6em);
 		margin: 0 auto;
 	}
 
@@ -3673,4 +3673,8 @@
 				max-width: 100%;
 			}
 
+		}
+		.formulario{
+			width:60%;
+			margin: 0 auto;
 		}

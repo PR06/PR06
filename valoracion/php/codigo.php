@@ -34,13 +34,15 @@
 						<p>Vota de manera rápida y online</p>
 					</header>
 
-
 		<!-- Main -->
 					<div id="main">
 
 		<!-- Introduction -->
 							<section id="intro" class="main">
-							<div></div>
+							<div class="error">
+							<?php
+								?>
+							</div>
 								<h2>Introduce el codigo del  proyecto</h2>
 							<form action="codigo.proc.php" method="post" id="form" onsubmit="return validar();">
 								<input type="text" name="codigo"><br/>

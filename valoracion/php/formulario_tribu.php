@@ -16,95 +16,36 @@
 			<div id="wrapper">
 
 		<!-- Header -->
-					<header id="header" class="alt">
+			<header id="header" class="alt">
 						
-					</header>
+			</header>
 
 		<!-- Nav -->
-					<nav id="nav">
-						Valoración del Público
-						<table>
-						  <tr>
-						    <td>Presentación Oral</td>
-						  </tr>
-						  <tr>
-						  	<td>Contenido</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Maria Anders</td>
-						    <td>Germany</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Francisco Chang</td>
-						    <td>Mexico</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Roland Mendel</td>
-						    <td>Austria</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Helen Bennett</td>
-						    <td>UK</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Yoshi Tannamuri</td>
-						    <td>Canada</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Giovanni Rovelli</td>
-						    <td>Italy</td>
-						  </tr>
-						</table>
-					</nav>
+			<nav id="nav">
+				Valoración del Público
+			</nav>
 
 		<!-- Main -->
+			<div id="main">
+				<section id="intro" class="main">
+					<h2>T'ha quedat una idea de la part que ha exposat</h2>
+					<form>
+					    <label class="radio-inline">
+					    
+					    	<input type="radio" name="optradio">
+					    </label>
+					    <label class="radio-inline">
+					      <input type="radio" name="optradio">Option 2
+					    </label>
+					    <label class="radio-inline">
+					      <input type="radio" name="optradio">Option 3
+					    </label>
+					</form>
+<!-- para hacerlo con un radiobutton <input class="inputradio" type="radio"> -->
 					
-						<table>
-						  <tr>
-						    <td>Presentación Oral</td>
-						  </tr>
-						  <tr>
-						  	<td>Contenido</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Maria Anders</td>
-						    <td>Germany</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Francisco Chang</td>
-						    <td>Mexico</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Roland Mendel</td>
-						    <td>Austria</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Helen Bennett</td>
-						    <td>UK</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Yoshi Tannamuri</td>
-						    <td>Canada</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Giovanni Rovelli</td>
-						    <td>Italy</td>
-						  </tr>
-						</table>
+				</section>		
 				
-                	
+            </div>
 
 
 
@@ -117,12 +58,12 @@
 		<!-- Get Started -->
 							
 
-					</div>
+					
 
 		<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy;Jesuitas Joan XXIII</a>.</p>
-					</footer>
+			<footer id="footer">
+				<p class="copyright">&copy;Jesuitas Joan XXIII</a>.</p>
+			</footer>
 
 			</div>
 

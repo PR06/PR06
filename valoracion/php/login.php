@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 	</head>
 	<body>
-<h3><a href="../index.html">Atrás</a></h3>
+<a href="../index.html"><i class="fa fa-chevron-left" aria-hidden="true" title='Volver'></i></a>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -26,22 +26,19 @@
 
 		<!-- Introduction -->
 					<section id="intro" class="main">
-						<header class="major">
-						<h2>Inicia Sesión</h2>
-						</header>
-							
-		<div class=""> 
+													
+		<div class="formulario"> 
+		<h2>Inicia Sesión</h2>
 			<form name="formulario" action="login.proc.php" method="POST">
 				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
-				<input type="text" name="usuario" placeholder="Usuario" size="15" maxlength="20"><br/>
+				<input type="text" name="usuario" placeholder="Usuario" size="15" maxlength="20" required=""><br/>
 				
 				<i class="fa fa-key fa-2x" aria-hidden="true"></i>
-				<input type="password" name="password" placeholder="Contrasenya" size="15" maxlength="30"><br/>
+				<input type="password" name="password" placeholder="Contrasenya" size="15" maxlength="30" required=""><br/>
 				<br/>				
 				<input type="submit" value="Login" class="enviar">
 			</form>
 		</div>
-					
 					</section>
 				
 					</div>
@@ -49,8 +46,9 @@
 					<footer id="footer">
 						<p class="copyright">&copy;Jesuitas Joan XXIII 2017</a></p>
 					</footer>
-
+					
 			</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>

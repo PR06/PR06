@@ -1,27 +1,19 @@
 <?php
-	session_start();
+session_start();
+$usuario=$_POST['usuario'];
+$password=$_POST['password'];
 
-	include('conexion.php');
+include("conexion.php");
 
-	$sql = "SELECT * FROM usuario WHERE usu_nombre='$usuario' AND usu_password='$password'";
+$proceso= $conexion->query("SELECT * FROM tbl_profesor WHERE profesor_correo='$usuario' AND profesor_password ='$password'");
+
+if($resultado = mysqli_fetch_array($proceso)){
+	$_SESSION['u_usuario'] = $usuario;
+	header("Location: formulario_tribu.php");
 	
-	$resultado_usuario = mysqli_query($conexion, $sql);
-
-	if(mysqli_num_rows($resultado_usuario)>0){
-		$datos_usuario = mysqli_fetch_array($resultado_usuario);
-		if($datos_usuario['usu_estado']==1){
-			session_reset();
-			$_SESSION['id_usuario']=$usuario;
-			$_SESSION['tipo_usuario']=$datos_usuario['usu_tipo'];
-			header("location: principal.php");
-		} else {
-			$_SESSION['error']="Usuario deshabilitado";
-			header("location: index.php");
-		}
-	} else {
-		$_SESSION['error']="Usuario/password incorrectos";
-		header("location: index.php");
-	}
-
+}else{
+	header("Location: login.php");
+	
+}
 
 ?>

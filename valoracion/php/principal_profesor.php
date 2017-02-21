@@ -2,7 +2,7 @@
 require('conexion.php');
 session_start();
 
-if(isset($_SESSION['u_usuario'])){
+if(isset($_SESSION['profesor'])){
 	//echo "Bienvenidos Tribunal  ";
 	echo "<a href='cerrar_sesion.proc.php'><i class='fa fa-sign-out fa-2x' aria-hidden='true' title='Logout'></i></a><br/>";
 } else {

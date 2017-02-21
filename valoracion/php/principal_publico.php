@@ -1,5 +1,14 @@
 <?php
+include 'conexion.php';
+
 extract($_REQUEST);
+
+$sql = "SELECT * FROM tbl_proyecto INNER JOIN tbl_proyectoalumno ON tbl_proyecto.proyecto_id = tbl_proyectoalumno.pa_proyectoid INNER JOIN tbl_alumno ON tbl_proyectoalumno.pa_alumnoid=tbl_alumno.alumno_id WHERE proyecto_codigo='$codigo'";
+
+$sql1="SELECT * FROM tbl_proyecto WHERE tbl_codigo='$codigo'";
+
+$alumnos=mysqli_query($conexion, $sql);
+$proyectos=mysqli_query($conexion, $sql1);
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -11,19 +20,6 @@ extract($_REQUEST);
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<script type="text/javascript">
-			
-		function validar(){
-			if (document.getElementById('form').codigo.value==""){
-				alert("Introduce el codigo del producto");
-				document.getElementById('form').codigo.focus();
-				return false;
-			}
-
-			return true;
-		}
-
-		</script>
 	</head>
 	<body>
 
@@ -42,26 +38,21 @@ extract($_REQUEST);
 
 		<!-- Introduction -->
 							<section id="intro" class="main">
-							<div class="error">
+							<div class="proyecto">
+
 							<?php
+								while ($proyecto = mysqli_fetch_array($proyectos)) {
+									echo "<div class='imagen-proyecto'>";
+										echo "<img src='$proyecto[proyecto_imagen]'>";
+									echo "</div>";
+									echo "<div class='datos-proyecto'>";
+										echo "<h2><b>Títol: </b>$proyecto[proyecto_nombre]</h2>";
+									while ( $alumno=mysqli_fetch_array($alumnos)) {
+										echo "<b>Membres: </b>$alumno[alumno_nombre] $alumno[alumno_apellido]";
+								}
 
-						if(isset($error)){
-							if ($error==0){
-								echo "Codigo no valido";
-							} elseif ($error==1) {
-								echo "Aún no puedes valorar el proyecto";
-							} else {
-								echo "Proyecto finalizado";
-							}
-						}
-
-								?>
+							?>
 							</div>
-								<h2>Introduce el codigo del  proyecto</h2>
-							<form action="codigo.proc.php" method="post" id="form" onsubmit="return validar();">
-								<input type="text" name="codigo"><br/>
-								<input type="submit" name="enviar" value="Enviar">								
-							</form>
 							</section>
 					</div>
 

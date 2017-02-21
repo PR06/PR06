@@ -8,6 +8,22 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script type="text/javascript">
+		function insertBd(){
+              var url = "formulario.php"; // El script a dónde se realizará la petición.
+                $.ajax({
+                       type: "POST",
+                       url: url,
+                       data: $("#formulario").serialize(), // Adjuntar los campos del formulario enviado.
+                       success: function(data)
+                       {
+                          alert(data);
+                           //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
+                       }
+                     });
+
+                return false; // Evitar ejecutar el submit del formulario.
+        </script>
 	</head>
 	<body>
 

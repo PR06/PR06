@@ -6,155 +6,69 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="../assets/css/main.css" />
+		<script src="http://code.jquery.com/jquery.js"></script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<script type="text/javascript">
-		function insertBd(){
-              var url = "formulario.php"; // El script a dónde se realizará la petición.
-                $.ajax({
-                       type: "POST",
-                       url: url,
-                       data: $("#formulario").serialize(), // Adjuntar los campos del formulario enviado.
-                       success: function(data)
-                       {
-                          alert(data);
-                           //$("#respuesta").html(data); // Mostrar la respuestas del script PHP.
-                       }
-                     });
 
-                return false; // Evitar ejecutar el submit del formulario.
-        </script>
 	</head>
 	<body>
-
+	
 		<!-- Wrapper -->
 			<div id="wrapper">
 
 		<!-- Header -->
-					<header id="header" class="alt">
-						<span class="logo"><img src="../images/logo.svg" alt="" /></span>
-						<h1>Class voting</h1>
-						<p>Vota de manera rápida y online</p>
-					</header>
+			<header id="header" class="alt">
+						
+			</header>
 
 		<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">Publico</a></li>
-							<li><a href="#first">Tribunal</a></li>
-							<li><a href="#second">Administrador</a></li>
-							
-						</ul>
-					</nav>
+			<nav id="nav">
+				Valoración del Público
+			</nav>
 
 		<!-- Main -->
-					<div id="main">
+			<div id="main">
+				<section id="intro" class="main">
+					<h2>T'ha quedat una idea de la part que ha exposat</h2><br/><br/>
+					<!-- <div style="float:right; margin-right:9%;margin-top:-3%;"><img  src="../images/1.png"></div> -->
+					<div><img class="breakpoint" src="../images/3.png">
+					<img class="breakpoint1" src="../images/3.png">
+					<img class="" src="../images/3.png">
+					<img class="" src="../images/3.png">
+					<img class="" src="../images/3.png"></div>
+					Javier<br/>
+					<div style="float:right; margin-right:10%;"><input type="radio"></div>
+					<div style="float:right; margin-right:10%;"><input type="radio" name="alumno1"></div>
+					<div style="float:right; margin-right:10%;"><input type="radio" name="alumno2"></div>
+					<div style="float:right; margin-right:10%;"><input type="radio" name="alumno3"></div>
+					<div style="float:right; margin-right:10%;"><input type="radio" name="alumno4"></div><br/>
+
+					Dani<input type="radio" name="alumno2"><input type="radio" name="alumno2"><input type="radio" name="alumno2"><input type="radio" name="alumno2"><input type="radio" name="alumno2"><br/>
+
+					Pau<input type="radio" name="alumno3"><input type="radio" name="alumno3"><input type="radio" name="alumno3"><input type="radio" name="alumno3"><input type="radio" name="alumno3">
+<!-- para hacerlo con un radiobutton <input class="inputradio" type="radio"> -->
+					
+				</section>		
+				
+            </div>
+
+
 
 		<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Ipsum sed adipiscing</h2>
-										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
-										<ul class="actions">
-											<li><a href="generic.html" class="button">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image"><img src="../images/pic01.jpg" alt="" /></span>
-								</div>
-							</section>
-
-		<!-- First Section -->
-							<section id="first" class="main special">
-								<header class="major">
-									<h2>Magna veroeros</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon major style1 fa-code"></span>
-										<h3>Ipsum consequat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>Amed sed feugiat</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style5 fa-diamond"></span>
-										<h3>Dolor nullam</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-								</ul>
-								<footer class="major">
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
+		
 
 		<!-- Second Section -->
-							<section id="second" class="main special">
-								<header class="major">
-									<h2>Ipsum consequat</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
-								<ul class="statistics">
-									<li class="style1">
-										<span class="icon fa-code-fork"></span>
-										<strong>5,120</strong> Etiam
-									</li>
-									<li class="style2">
-										<span class="icon fa-folder-open-o"></span>
-										<strong>8,192</strong> Magna
-									</li>
-									<li class="style3">
-										<span class="icon fa-signal"></span>
-										<strong>2,048</strong> Tempus
-									</li>
-									<li class="style4">
-										<span class="icon fa-laptop"></span>
-										<strong>4,096</strong> Aliquam
-									</li>
-									<li class="style5">
-										<span class="icon fa-diamond"></span>
-										<strong>1,024</strong> Nullam
-									</li>
-								</ul>
-								<p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
-								<footer class="major">
-									<ul class="actions">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
+							
 
 		<!-- Get Started -->
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>Congue imperdiet</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
-								<footer class="major">
-									<ul class="actions">
-										<li><a href="generic.html" class="button special">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
+							
 
-					</div>
+					
 
 		<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy;Jesuitas Joan XXIII</a>.</p>
-					</footer>
+			<footer id="footer">
+				<p class="copyright">&copy;Jesuitas Joan XXIII</a>.</p>
+			</footer>
 
 			</div>
 

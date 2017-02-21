@@ -29,18 +29,9 @@
 			<div id="main">
 				<section id="intro" class="main">
 					<h2>T'ha quedat una idea de la part que ha exposat</h2>
-					<form>
-					    <label class="radio-inline">
-					    
-					    	<input type="radio" name="optradio">
-					    </label>
-					    <label class="radio-inline">
-					      <input type="radio" name="optradio">Option 2
-					    </label>
-					    <label class="radio-inline">
-					      <input type="radio" name="optradio">Option 3
-					    </label>
-					</form>
+					<input type="radio" name="alumno1">
+					<input type="radio" name="alumno2">
+					<input type="radio" name="alumno3">
 <!-- para hacerlo con un radiobutton <input class="inputradio" type="radio"> -->
 					
 				</section>		

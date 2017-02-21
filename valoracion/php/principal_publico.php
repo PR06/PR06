@@ -57,11 +57,7 @@ $proyectos=mysqli_query($conexion, $sql1);
 										echo "$alumno[alumno_nombre] $alumno[alumno_apellido], ";
 								}
 										echo "<a href='formulario_publi.php?id=$proyecto[proyecto_id]'><div class='valorar'>";
-											/*echo "<form action='formulario_publi.php' method='POST'>";
-												echo "<input type='hidden' name='proyecto_id' value='$proyecto[proyecto_id]'>";
-												echo "<button>Valorar</button>";
-											echo "</form>";*/
-											echo "Valorar";
+												echo "Valorar";
 										echo "</div></a>";
 
 								echo "</div>";

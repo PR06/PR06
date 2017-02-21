@@ -15,7 +15,7 @@ extract($_REQUEST);
 			
 		function validar(){
 			if (document.getElementById('form').codigo.value==""){
-				alert("Introduce el codigo del producto");
+				alert("Introdueix el codi del projecte");
 				document.getElementById('form').codigo.focus();
 				return false;
 			}
@@ -47,20 +47,22 @@ extract($_REQUEST);
 
 						if(isset($error)){
 							if ($error==0){
-								echo "Codigo no valido";
+								echo "Codi no vàlid";
 							} elseif ($error==1) {
-								echo "Aún no puedes valorar el proyecto";
+								echo "Encara no pots valorar el projecte";
+							} else if ($error==2) {
+								echo "Projecte finalitzat";
 							} else {
-								echo "Proyecto finalizado";
+								echo "Ja has valorat el projecte";
 							}
 						}
 
 								?>
 							</div>
-								<h2>Introduce el codigo del  proyecto</h2>
+								<h2>Introdueix el codi del projecte</h2>
 							<form action="codigo.proc.php" method="post" id="form" onsubmit="return validar();">
 								<input type="text" name="codigo"><br/>
-								<input type="submit" name="enviar" value="Enviar">								
+								<input type="submit" name="enviar" value="Enviar" <?php if (isset($_COOKIE['codigo'])) { echo "disabled";} ?>>								
 							</form>
 							</section>
 					</div>

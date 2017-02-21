@@ -1,11 +1,16 @@
 <?php
+extract($_REQUEST);
+
+if (isset($_COOKIE['codigo'])){
+	header('location:codigo.php?error=3');
+} else {
+
 include 'conexion.php';
 
-extract($_REQUEST);
 
 $sql = "SELECT * FROM tbl_alumno  LEFT JOIN tbl_proyectoalumno ON tbl_proyectoalumno.pa_alumnoid=tbl_alumno.alumno_id LEFT JOIN tbl_proyecto ON tbl_proyecto.proyecto_id = tbl_proyectoalumno.pa_proyectoid WHERE proyecto_codigo='$codigo'";
 
-$sql1="SELECT * FROM tbl_proyecto WHERE tbl_codigo='$codigo'";
+$sql1="SELECT * FROM tbl_proyecto WHERE proyecto_codigo='$codigo'";
 
 $alumnos=mysqli_query($conexion, $sql);
 $proyectos=mysqli_query($conexion, $sql1);
@@ -45,11 +50,20 @@ $proyectos=mysqli_query($conexion, $sql1);
 									echo "<div class='imagen-proyecto'>";
 										echo "<img src='$proyecto[proyecto_imagen]'>";
 									echo "</div>";
-									echo "<div class='datos-proyecto'>";
+								echo "<div class='datos-proyecto'>";
 										echo "<h2><b>Títol: </b>$proyecto[proyecto_nombre]</h2>";
+										echo "<b>Membres:&nbsp;&nbsp;&nbsp;</b>";
 									while ( $alumno=mysqli_fetch_array($alumnos)) {
-										echo "<b>Membres: </b>$alumno[alumno_nombre] $alumno[alumno_apellido]";
+										echo "$alumno[alumno_nombre] $alumno[alumno_apellido], ";
 								}
+										echo "<a href='formulario_publi.php?id=$proyecto[proyecto_id]'><div class='valorar'>";
+											/*echo "<form action='formulario_publi.php' method='POST'>";
+												echo "<input type='hidden' name='proyecto_id' value='$proyecto[proyecto_id]'>";
+												echo "<button>Valorar</button>";
+											echo "</form>";*/
+											echo "Valorar";
+										echo "</div></a>";
+
 								echo "</div>";
 							}
 
@@ -66,12 +80,15 @@ $proyectos=mysqli_query($conexion, $sql1);
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/skel.min.js"></script>
+			<script src="../assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/main.js"></script>
 	</body>
 </html>
+<?php
+	}
+?>

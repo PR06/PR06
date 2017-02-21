@@ -1,8 +1,8 @@
 <?php 
 		
 		include 'conexion.php';
-
-		extract($_REQUEST);
+		
+		$codigo = $_POST['codigo'];
 
 		$codigo = mysqli_escape_string($conexion, $codigo);
 
@@ -14,7 +14,7 @@
 			if ($proyecto = mysqli_fetch_array($resultado)){
 				if ($proyecto['proyecto_estado']=="empezar"){
 					header('location:codigo.php?error=1');
-				} elseif ($proyecto['proyecto_estado']=="encurso"){
+				} elseif ($proyecto['proyecto_estado']=="encurso"){ 
 					header('location:principal_publico.php?codigo='.$codigo);
 				} else {
 					header('location:codigo.php?error=2');

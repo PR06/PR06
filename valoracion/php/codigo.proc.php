@@ -15,7 +15,7 @@
 				if ($proyecto['proyecto_estado']=="empezar"){
 					header('location:codigo.php?error=1');
 				} elseif ($proyecto['proyecto_estado']=="encurso"){
-					header('location:principal_publico.php?id='. $proyecto['proyecto_id']);
+					header('location:principal_publico.php?codigo='. $codigo);
 				} else {
 					header('location:codigo.php?error=2');
 				} 

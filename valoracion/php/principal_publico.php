@@ -51,7 +51,7 @@ $proyectos=mysqli_query($conexion, $sql1);
 										echo "<img src='$proyecto[proyecto_imagen]'>";
 									echo "</div>";
 								echo "<div class='datos-proyecto'>";
-										echo "<h2><b>Títol: </b>$proyecto[proyecto_nombre]</h2>";
+										echo "<h2><b>Títol:&nbsp;&nbsp;&nbsp;</b>$proyecto[proyecto_nombre]</h2>";
 										echo "<b>Membres:&nbsp;&nbsp;&nbsp;</b>";
 									while ( $alumno=mysqli_fetch_array($alumnos)) {
 										echo "$alumno[alumno_nombre] $alumno[alumno_apellido], ";

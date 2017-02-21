@@ -1,3 +1,16 @@
+<?php
+require('conexion.php');
+session_start();
+
+if(isset($_SESSION['u_usuario'])){
+	//echo "Bienvenidos Tribunal  ";
+	echo "<a href='cerrar_sesion.proc.php'><i class='fa fa-sign-out fa-2x' aria-hidden='true' title='Logout'></i></a><br/>";
+} else {
+	header("Location: ../index.html");
+}
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -11,61 +24,67 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 	</head>
 	<body>
-	
 		<!-- Wrapper -->
 			<div id="wrapper">
-
-		<!-- Header -->
-			<header id="header" class="alt">
-						
-			</header>
-
 		<!-- Nav -->
-			<nav id="nav">
-				Valoración del Público
-			</nav>
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Crear projecte</a></li>
+							<li><a href="#first">Modificació de la valoració</a></li>
+							<li><a href="#second">Valorar</a></li>
+							<li><a href="#cta">Estadístiques</a></li>
+						</ul>
+					</nav>
 
-		<!-- Main -->
-			<div id="main">
-				<section id="intro" class="main">
-					<h2>T'ha quedat una idea de la part que ha exposat</h2>
-					<form>
-					    <label class="radio-inline">
-					    
-					    	<input type="radio" name="optradio">
-					    </label>
-					    <label class="radio-inline">
-					      <input type="radio" name="optradio">Option 2
-					    </label>
-					    <label class="radio-inline">
-					      <input type="radio" name="optradio">Option 3
-					    </label>
-					</form>
-<!-- para hacerlo con un radiobutton <input class="inputradio" type="radio"> -->
-					
-				</section>		
-				
-            </div>
-
-
-
-		<!-- Introduction -->
-		
-
-		<!-- Second Section -->
-							
-
-		<!-- Get Started -->
-							
-
-					
+					<nav id="nav">
+						Valoración del Público
+						<table>
+						  <tr>
+						    <td>Presentación Oral</td>
+						  </tr>
+						  <tr>
+						  	<td>Contenido</td>
+						  </tr>
+						  <tr>
+						    <td></td>
+						    <td>Maria Anders</td>
+						    <td>Germany</td>
+						  </tr>
+						  <tr>
+						    <td></td>
+						    <td>Francisco Chang</td>
+						    <td>Mexico</td>
+						  </tr>
+						  <tr>
+						    <td></td>
+						    <td>Roland Mendel</td>
+						    <td>Austria</td>
+						  </tr>
+						  <tr>
+						    <td></td>
+						    <td>Helen Bennett</td>
+						    <td>UK</td>
+						  </tr>
+						  <tr>
+						    <td></td>
+						    <td>Yoshi Tannamuri</td>
+						    <td>Canada</td>
+						  </tr>
+						  <tr>
+						    <td></td>
+						    <td>Giovanni Rovelli</td>
+						    <td>Italy</td>
+						  </tr>
+						</table>
+					</nav>
+			</div>
 
 		<!-- Footer -->
-			<footer id="footer">
-				<p class="copyright">&copy;Jesuitas Joan XXIII</a>.</p>
-			</footer>
+					<footer id="footer">
+						<p class="copyright">&copy;Jesuitas Joan XXIII 2017</a></p>
+					</footer>
 
-			</div>
+			
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

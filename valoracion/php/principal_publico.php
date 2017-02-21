@@ -3,7 +3,7 @@ include 'conexion.php';
 
 extract($_REQUEST);
 
-$sql = "SELECT * FROM tbl_proyecto INNER JOIN tbl_proyectoalumno ON tbl_proyecto.proyecto_id = tbl_proyectoalumno.pa_proyectoid INNER JOIN tbl_alumno ON tbl_proyectoalumno.pa_alumnoid=tbl_alumno.alumno_id WHERE proyecto_codigo='$codigo'";
+$sql = "SELECT * FROM tbl_alumno  LEFT JOIN tbl_proyectoalumno ON tbl_proyectoalumno.pa_alumnoid=tbl_alumno.alumno_id LEFT JOIN tbl_proyecto ON tbl_proyecto.proyecto_id = tbl_proyectoalumno.pa_proyectoid WHERE proyecto_codigo='$codigo'";
 
 $sql1="SELECT * FROM tbl_proyecto WHERE tbl_codigo='$codigo'";
 
@@ -50,6 +50,8 @@ $proyectos=mysqli_query($conexion, $sql1);
 									while ( $alumno=mysqli_fetch_array($alumnos)) {
 										echo "<b>Membres: </b>$alumno[alumno_nombre] $alumno[alumno_apellido]";
 								}
+								echo "</div>";
+							}
 
 							?>
 							</div>

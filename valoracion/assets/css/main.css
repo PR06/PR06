@@ -16,7 +16,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
-		overflow-x: hidden;
+		
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -41,7 +41,7 @@
 	}
 
 	table {
-		border-collapse: collapse;
+		/*border-collapse: collapse;*/
 		border-spacing: 0;
 	}
 
@@ -2754,7 +2754,8 @@
 		}
 
 		table td {
-			padding: 0.75em 0.75em;
+			padding: 0em 0em;
+			text-align: center;
 		}
 
 		table th {
@@ -3231,8 +3232,7 @@
 		color: #636363;
 		border-bottom-left-radius: 0.25em;
 		border-bottom-right-radius: 0.25em;
-		
-		
+		padding: 0.75em 0.75em;
 
 	}
 
@@ -3727,7 +3727,7 @@ max-width: 15%;
 max-width: 15%;
 display: inline-block;
 float:right; 
-margin-right:20%;
+margin-right:30%;
 margin-top:0%;
 }
 /* 2 columnas para tablets */
@@ -3746,7 +3746,30 @@ margin-top:0%;
 max-width: 15%;
 }
 }
-
+/*hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
+.breakpoint11  {
+max-width: 15%;
+display: inline-block;
+float:right; 
+margin-right:4%;
+margin-top:0%;
+}
+/* 2 columnas para tablets */
+@media (min-width: 420px) {
+.breakpoint11  {
+max-width: 15%;
+display: inline-block;
+float:right;
+margin-right:20%;
+margin-top:0%;
+}
+}
+/* 4 columnas para grandes dispositivos*/
+@media (min-width: 760px) {
+.breakpoint11  {
+max-width: 15%;
+}
+}
 
 		.error {
 			color:red;
@@ -3793,4 +3816,11 @@ max-width: 15%;
 			}
 
 			
+		}
+
+		@media screen and (max-width: 600px) {
+
+			.hola{
+				margin-left: 20%;
+			}
 		}

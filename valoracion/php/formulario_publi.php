@@ -28,27 +28,140 @@
 
 		<!-- Main -->
 			<div id="main">
-				<section id="intro" class="main">
-					<h2>T'ha quedat una idea de la part que ha exposat</h2><br/><br/>
-					<!-- <div style="float:right; margin-right:9%;margin-top:-3%;"><img  src="../images/1.png"></div> -->
-					<div><img class="breakpoint" src="../images/3.png">
-					<img class="breakpoint1" src="../images/3.png">
-					<img class="" src="../images/3.png">
-					<img class="" src="../images/3.png">
-					<img class="" src="../images/3.png"></div>
-					Javier<br/>
-					<div style="float:right; margin-right:10%;"><input type="radio"></div>
-					<div style="float:right; margin-right:10%;"><input type="radio" name="alumno1"></div>
-					<div style="float:right; margin-right:10%;"><input type="radio" name="alumno2"></div>
-					<div style="float:right; margin-right:10%;"><input type="radio" name="alumno3"></div>
-					<div style="float:right; margin-right:10%;"><input type="radio" name="alumno4"></div><br/>
-
-					Dani<input type="radio" name="alumno2"><input type="radio" name="alumno2"><input type="radio" name="alumno2"><input type="radio" name="alumno2"><input type="radio" name="alumno2"><br/>
-
-					Pau<input type="radio" name="alumno3"><input type="radio" name="alumno3"><input type="radio" name="alumno3"><input type="radio" name="alumno3"><input type="radio" name="alumno3">
-<!-- para hacerlo con un radiobutton <input class="inputradio" type="radio"> -->
+				<h2>Presentació Oral</h2>
+				<h3>1. T'ha quedat una idea de la part que ha exposat</h3><br/><br/>
+					<table >
+						<tr>
+							<td></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+						</tr>
+						<tr style="height: 40px;">
+							<td>Javier</td>
+							<td><input type="radio" name="0"></td>
+							<td><input type="radio" name="2"></td>
+							<td><input type="radio" name="5"></td>
+							<td><input type="radio" name="7"></td>
+							<td><input type="radio" name="10"></td><br/>
+						</tr>
+						<tr style="height: 40px;">
+							<td>Javier</td>
+							<td><input type="radio" name="0"></td>
+							<td><input type="radio" name="2"></td>
+							<td><input type="radio" name="5"></td>
+							<td><input type="radio" name="7"></td>
+							<td><input type="radio" name="10"></td>
+						</tr>
+						<tr style="height: 40px;">
+							<td>Javier</td>
+							<td><input type="radio" name="0"></td>
+							<td><input type="radio" name="2"></td>
+							<td><input type="radio" name="5"></td>
+							<td><input type="radio" name="7"></td>
+							<td><input type="radio" name="10"></td>
+						</tr>
+					</table>
+				<h3>2. Com valores la seva expressió oral</h3><br/><br/>
+					<table >
+						<tr>
+							<td></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+						</tr>
+						<tr>
+							<td>Javier</td>
+							<td><input type="radio" name="0"></td>
+							<td><input type="radio" name="2"></td>
+							<td><input type="radio" name="5"></td>
+							<td><input type="radio" name="7"></td>
+							<td><input type="radio" name="10"></td>
+						</tr>
+					</table>
+				<h3>3. Creus que la presentació està ben estructurada</h3><br/><br/>
+					<table >
+						<tr>
+							<td></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+						</tr>
+						<tr>
+							<td>Javier</td>
+							<td><input type="radio" name="0"></td>
+							<td><input type="radio" name="2"></td>
+							<td><input type="radio" name="5"></td>
+							<td><input type="radio" name="7"></td>
+							<td><input type="radio" name="10"></td>
+						</tr>
+					</table>
+				<h2>Continguts</h2>
+				<h3>4. Com valores la qualitat del power-point, flash, etc que s'ha fet servir a l'exposició</h3><br/><br/>
+					<table >
+						<tr>
+							<td></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+						</tr>
+						<tr>
+							<td>Javier</td>
+							<td><input type="radio" name="0"></td>
+							<td><input type="radio" name="2"></td>
+							<td><input type="radio" name="5"></td>
+							<td><input type="radio" name="7"></td>
+							<td><input type="radio" name="10"></td>
+						</tr>
+					</table>
+				<h3>5. T'ha quedat clar el contingut del projecte</h3><br/><br/>
+					<table >
+						<tr>
+							<td></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+						</tr>
+						<tr>
+							<td>Javier</td>
+							<td><input type="radio" name="0"></td>
+							<td><input type="radio" name="2"></td>
+							<td><input type="radio" name="5"></td>
+							<td><input type="radio" name="7"></td>
+							<td><input type="radio" name="10"></td>
+						</tr>
+					</table>
+				<h3>6. Com valores la qualitat del projecte exposat</h3><br/><br/>
+					<table >
+						<tr>
+							<td></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+						</tr>
+						<tr>
+							<td>Javier</td>
+							<td><input type="radio" name="0"></td>
+							<td><input type="radio" name="2"></td>
+							<td><input type="radio" name="5"></td>
+							<td><input type="radio" name="7"></td>
+							<td><input type="radio" name="10"></td>
+						</tr>
+					</table>
 					
-				</section>		
+					
 				
             </div>
 

@@ -1,3 +1,13 @@
+<?php
+extract($_REQUEST);
+session_start();
+
+if (isset($_SESSION['profesor'])){
+	header('location:principal_profesor.php');
+} else if (isset($_SESSION['admin'])){
+	header('location:principal_admin.php');
+} else {
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -31,7 +41,7 @@
 		<h2>Inicia Sessió</h2>
 			<form name="formulario" action="login.proc.php" method="POST">
 				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
-				<input type="text" name="usuario" placeholder="Usuari" size="15" maxlength="20" required=""><br/>
+				<input type="text" name="usuario" placeholder="Correu" size="15" maxlength="20" required=""><br/>
 				
 				<i class="fa fa-key fa-2x" aria-hidden="true"></i>
 				<input type="password" name="password" placeholder="Clau" size="15" maxlength="30" required=""><br/>
@@ -59,3 +69,6 @@
 			<script src="assets/js/main.js"></script>
 	</body>
 </html>
+<?php
+}
+?>

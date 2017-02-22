@@ -3679,6 +3679,7 @@
 			width:60%;
 			margin: 0 auto;
 		}
+
 	.pregunta1{
 		padding: 30px 200px ;
     
@@ -3745,3 +3746,51 @@ margin-top:0%;
 max-width: 15%;
 }
 }
+
+
+		.error {
+			color:red;
+		}
+
+		.proyecto {
+			display: inline-flex;
+		}
+
+		.datos-proyecto {
+			margin-left: 5%;
+		}
+
+		.valorar {
+			margin-top: 5%;
+			background-color: #D8D8D8;
+			border: 1px green;
+			text-align: center;
+			color: black;
+			padding: 0.15em;
+			border-radius: 5%;
+		}
+
+		@media screen and (max-width: 600px) {
+
+			.proyecto {
+				display: block;
+				margin-top: 5%;
+			
+			}
+
+			.imagen-proyecto{
+
+					text-align: center;
+
+			}
+
+			.datos-proyecto{
+				text-align: justify;
+			}
+
+			.valorar{
+				text-align: center;
+			}
+
+			
+		}

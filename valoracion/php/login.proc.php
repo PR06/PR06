@@ -8,12 +8,21 @@ include("conexion.php");
 $proceso= $conexion->query("SELECT * FROM tbl_profesor WHERE profesor_correo='$usuario' AND profesor_password ='$password'");
 
 if($resultado = mysqli_fetch_array($proceso)){
-	$_SESSION['u_usuario'] = $usuario;
-	header("Location: formulario_tribu.php");
+	$_SESSION['profesor'] = $resultado['profesor_id'];
+	header("Location: principal_profesor.php");
 	
 }else{
-	header("Location: login.php");
-	
-}
+	$sql = "SELECT * from tbl_admin WHERE admin_user='$usuario' && admin_password='$password'";
+	$administradores = mysqli_query($conexion, $sql);
+
+	if (mysqli_num_rows($administradores)>0){
+		while ($admin = mysqli_fetch_array($administradores)) {
+			$_SESSION['admin'] = $admin['admin_id'];
+			header('Location:principal_admin.php');
+		}
+	}else{
+		header('location:login.php');
+	}
+} 
 
 ?>

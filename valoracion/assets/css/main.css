@@ -1619,7 +1619,7 @@
 	@media screen and (max-width: 480px) {
 
 		html, body {
-			min-width: 320px;
+			/*min-width: 320px;*/
 		}
 
 	}
@@ -1704,7 +1704,7 @@
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 1em 0;
 	}
 
 		p.content {
@@ -3282,6 +3282,10 @@
 		color: #636363;
 		border-bottom-left-radius: 0.25em;
 		border-bottom-right-radius: 0.25em;
+		border-top-left-radius: 0.25em;
+		border-top-right-radius: 0.25em;
+
+
 		padding: 0.75em 0.75em;
 
 
@@ -3633,9 +3637,9 @@
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
-		padding: 5em 5em 3em 5em ;
-		width: calc(100% + 2em);
-		margin: 0 0 3em -2em;
+		padding: 0em 0em 0em 0em ;
+		width: calc(100% + 0em);
+		margin: 0 0 0em ;
 	}
 
 		#footer > * {
@@ -3706,7 +3710,7 @@
 /* Wrapper */
 
 	#wrapper {
-		width: 90%;
+		width: 85%;
 		margin: 0 auto;
 	}
 

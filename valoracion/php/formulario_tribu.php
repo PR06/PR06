@@ -23,7 +23,7 @@
 
 		<!-- Nav -->
 			<nav id="nav">
-				Valoración del Público
+				Valoración del Tribunal
 			</nav>
 
 		<!-- Main -->

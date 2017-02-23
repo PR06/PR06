@@ -15,7 +15,8 @@
 		border: 0;
 		font-size: 100%;
 		font: inherit;
-		vertical-align: baseline;
+		/*vertical-align: baseline;*/
+
 		
 	}
 
@@ -3283,6 +3284,7 @@
 		border-bottom-right-radius: 0.25em;
 		padding: 0.75em 0.75em;
 
+
 	}
 
 		#main input, #main select, #main textarea {
@@ -3498,7 +3500,7 @@
 		}
 
 			#main table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(222, 222, 222, 0.25);
+				background-color: white;
 			}
 
 		#main table th {

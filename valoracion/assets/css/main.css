@@ -3204,7 +3204,45 @@
 			padding-top: 4.25em;
 		}
 
-		
+		#nav ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+			#nav ul li {
+				-moz-transition: margin 0.2s ease;
+				-webkit-transition: margin 0.2s ease;
+				-ms-transition: margin 0.2s ease;
+				transition: margin 0.2s ease;
+				display: inline-block;
+				margin: 0 0.35em;
+				padding: 0;
+				vertical-align: middle;
+			}
+
+				#nav ul li a {
+					-moz-transition: font-size 0.2s ease;
+					-webkit-transition: font-size 0.2s ease;
+					-ms-transition: font-size 0.2s ease;
+					transition: font-size 0.2s ease;
+					display: inline-block;
+					height: 2.25em;
+					line-height: 2.25em;
+					padding: 0 1.25em;
+					border: 0;
+					border-radius: 8px;
+					box-shadow: inset 0 0 0 1px transparent;
+				}
+
+					#nav ul li a:hover {
+						background-color: rgba(222, 222, 222, 0.25);
+					}
+
+					#nav ul li a.active {
+						background-color: #ffffff;
+						box-shadow: none;
+					}
 
 		#nav.alt {
 			position: fixed;
@@ -3213,7 +3251,8 @@
 			background-color: rgba(247, 247, 247, 0.95);
 			border-top-left-radius: 0;
 			border-top-right-radius: 0;
-			z-index: 10000 		}
+			z-index: 10000;
+		}
 
 			#nav.alt ul li {
 				margin: 0 0.175em;
@@ -3222,6 +3261,16 @@
 				#nav.alt ul li a {
 					font-size: 0.9em;
 				}
+
+		@media screen and (max-width: 736px) {
+
+
+				#nav + #main {
+					padding-top: 0;
+				}
+
+		}
+
 
 	
 
@@ -3655,24 +3704,23 @@
 /* Wrapper */
 
 	#wrapper {
-		width: 60em;
-		max-width: calc(80% - 6em);
+		width: 90%;
 		margin: 0 auto;
 	}
 
-		@media screen and (max-width: 480px) {
+		@media screen and (max-width: 530px) {
 
 			#wrapper {
-				max-width: calc(100% - 2em);
+				max-width: 90%;
 			}
 
 		}
 
-		@media screen and (max-width: 360px) {
+		@media screen and (max-width: 200px) {
 
-			#wrapper {
-				max-width: 100%;
-			}
+			#nav {
+				text-align: inherit;
+				}
 
 		}
 		.formulario{

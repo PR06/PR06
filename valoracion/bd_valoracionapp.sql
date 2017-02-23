@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2017 at 08:17 PM
+-- Generation Time: Feb 23, 2017 at 05:20 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -51,17 +51,18 @@ CREATE TABLE `tbl_alumno` (
   `alumno_id` int(11) NOT NULL,
   `alumno_nombre` varchar(15) NOT NULL,
   `alumno_apellido` varchar(30) NOT NULL,
-  `alumno_curso` varchar(15) NOT NULL
+  `alumno_curso` varchar(15) NOT NULL,
+  `alumno_proyectoid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_alumno`
 --
 
-INSERT INTO `tbl_alumno` (`alumno_id`, `alumno_nombre`, `alumno_apellido`, `alumno_curso`) VALUES
-(1, 'Mike', 'Gomez', 'DAW2'),
-(2, 'Musta', 'MKFALFM', 'DAW2'),
-(3, 'Javi', 'Acebo', 'DAW2');
+INSERT INTO `tbl_alumno` (`alumno_id`, `alumno_nombre`, `alumno_apellido`, `alumno_curso`, `alumno_proyectoid`) VALUES
+(1, 'Mike', 'Gomez', 'DAW2', 2),
+(2, 'Musta', 'MKFALFM', 'DAW2', 2),
+(3, 'Javi', 'Acebo', 'DAW2', 2);
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,7 @@ INSERT INTO `tbl_alumno` (`alumno_id`, `alumno_nombre`, `alumno_apellido`, `alum
 CREATE TABLE `tbl_preguntapublico` (
   `prpu_id` int(11) NOT NULL,
   `prpu_tipo` enum('oral','contenido') NOT NULL,
-  `prpu_pregunta` int(11) NOT NULL
+  `prpu_pregunta` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -97,16 +98,15 @@ CREATE TABLE `tbl_profesor` (
   `profesor_id` int(11) NOT NULL,
   `profesor_nombre` varchar(15) NOT NULL,
   `profesor_apellido` varchar(30) NOT NULL,
-  `profesor_correo` varchar(50) NOT NULL,
-  `profesor_password` varchar(15) NOT NULL
+  `profesor_correo` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_profesor`
 --
 
-INSERT INTO `tbl_profesor` (`profesor_id`, `profesor_nombre`, `profesor_apellido`, `profesor_correo`, `profesor_password`) VALUES
-(1, 'David', 'Marin', 'david.marin@fje.edu', 'asdf');
+INSERT INTO `tbl_profesor` (`profesor_id`, `profesor_nombre`, `profesor_apellido`, `profesor_correo`) VALUES
+(1, 'David', 'Marin', 'david.marin@fje.edu');
 
 -- --------------------------------------------------------
 
@@ -137,44 +137,23 @@ INSERT INTO `tbl_proyecto` (`proyecto_id`, `proyecto_nombre`, `proyecto_imagen`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_proyectoalumno`
---
-
-CREATE TABLE `tbl_proyectoalumno` (
-  `pa_id` int(11) NOT NULL,
-  `pa_alumnoid` int(11) NOT NULL,
-  `pa_proyectoid` int(11) NOT NULL,
-  `pa_notaTribnal` decimal(4,2) DEFAULT NULL,
-  `pa_notaPublico` decimal(4,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_proyectoalumno`
---
-
-INSERT INTO `tbl_proyectoalumno` (`pa_id`, `pa_alumnoid`, `pa_proyectoid`, `pa_notaTribnal`, `pa_notaPublico`) VALUES
-(2, 1, 2, NULL, NULL),
-(3, 3, 2, NULL, NULL),
-(4, 2, 2, NULL, NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_proyectoprofesor`
 --
 
 CREATE TABLE `tbl_proyectoprofesor` (
   `pp_id` int(11) NOT NULL,
   `pp_profesorid` int(11) NOT NULL,
-  `pp_proyectoid` int(11) NOT NULL
+  `pp_proyectoid` int(11) NOT NULL,
+  `pp_usuario` varchar(15) NOT NULL,
+  `pp_password` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_proyectoprofesor`
 --
 
-INSERT INTO `tbl_proyectoprofesor` (`pp_id`, `pp_profesorid`, `pp_proyectoid`) VALUES
-(1, 1, 2);
+INSERT INTO `tbl_proyectoprofesor` (`pp_id`, `pp_profesorid`, `pp_proyectoid`, `pp_usuario`, `pp_password`) VALUES
+(1, 1, 2, 'profesor', 'profe');
 
 -- --------------------------------------------------------
 
@@ -189,9 +168,36 @@ CREATE TABLE `tbl_publico` (
   `publico_tipo` enum('alumno','otro') NOT NULL,
   `publico_curso` varchar(15) DEFAULT NULL,
   `publico_notaMedia` decimal(4,2) NOT NULL,
-  `publico_comentario` varchar(300) DEFAULT NULL,
-  `publico_proyectoid` int(11) NOT NULL
+  `publico_comentario` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_publiconota`
+--
+
+CREATE TABLE `tbl_publiconota` (
+  `pn_id` int(11) NOT NULL,
+  `pn_prpuid` int(11) NOT NULL,
+  `pn_publicoid` int(11) NOT NULL,
+  `pn_alumnoid` int(11) NOT NULL,
+  `pn_nota` decimal(4,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tribunalnota`
+--
+
+CREATE TABLE `tbl_tribunalnota` (
+  `tn_id` int(11) NOT NULL,
+  `tn_prtriid` int(11) NOT NULL,
+  `tn_alumnoid` int(11) NOT NULL,
+  `tn_ppid` int(11) NOT NULL,
+  `tn_notatribunal` decimal(4,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Indexes for dumped tables
@@ -210,6 +216,12 @@ ALTER TABLE `tbl_alumno`
   ADD PRIMARY KEY (`alumno_id`);
 
 --
+-- Indexes for table `tbl_preguntapublico`
+--
+ALTER TABLE `tbl_preguntapublico`
+  ADD PRIMARY KEY (`prpu_id`);
+
+--
 -- Indexes for table `tbl_preguntatribunal`
 --
 ALTER TABLE `tbl_preguntatribunal`
@@ -226,12 +238,6 @@ ALTER TABLE `tbl_profesor`
 --
 ALTER TABLE `tbl_proyecto`
   ADD PRIMARY KEY (`proyecto_id`);
-
---
--- Indexes for table `tbl_proyectoalumno`
---
-ALTER TABLE `tbl_proyectoalumno`
-  ADD PRIMARY KEY (`pa_id`);
 
 --
 -- Indexes for table `tbl_proyectoprofesor`
@@ -274,11 +280,6 @@ ALTER TABLE `tbl_profesor`
 --
 ALTER TABLE `tbl_proyecto`
   MODIFY `proyecto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `tbl_proyectoalumno`
---
-ALTER TABLE `tbl_proyectoalumno`
-  MODIFY `pa_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `tbl_proyectoprofesor`
 --

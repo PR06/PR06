@@ -29,55 +29,17 @@ if(isset($_SESSION['profesor'])){
 		<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">Crear projecte</a></li>
-							<li><a href="#first">Modificació de la valoració</a></li>
-							<li><a href="#second">Valorar</a></li>
+							<li><a href="#intro" class="active">Projectes</a></li>
+							<li><a href="#first">Notes</a></li>
 							<li><a href="#cta">Estadístiques</a></li>
 						</ul>
 					</nav>
 
-					<nav id="nav">
-						Valoración del Público
-						<table>
-						  <tr>
-						    <td>Presentación Oral</td>
-						  </tr>
-						  <tr>
-						  	<td>Contenido</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Maria Anders</td>
-						    <td>Germany</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Francisco Chang</td>
-						    <td>Mexico</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Roland Mendel</td>
-						    <td>Austria</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Helen Bennett</td>
-						    <td>UK</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Yoshi Tannamuri</td>
-						    <td>Canada</td>
-						  </tr>
-						  <tr>
-						    <td></td>
-						    <td>Giovanni Rovelli</td>
-						    <td>Italy</td>
-						  </tr>
-						</table>
-					</nav>
-			</div>
+
+				<div id="main">
+
+            </div>
+            </div>
 
 		<!-- Footer -->
 					<footer id="footer">

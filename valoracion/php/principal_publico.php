@@ -8,7 +8,7 @@ if (isset($_COOKIE['codigo'])){
 include 'conexion.php';
 
 
-$sql = "SELECT * FROM tbl_alumno  LEFT JOIN tbl_proyectoalumno ON tbl_proyectoalumno.pa_alumnoid=tbl_alumno.alumno_id LEFT JOIN tbl_proyecto ON tbl_proyecto.proyecto_id = tbl_proyectoalumno.pa_proyectoid WHERE proyecto_codigo='$codigo'";
+$sql = "SELECT * FROM tbl_alumno  INNER JOIN tbl_proyecto ON tbl_proyecto.proyecto_id = tbl_alumno.alumno_proyectoid WHERE proyecto_codigo='$codigo'";
 
 $sql1="SELECT * FROM tbl_proyecto WHERE proyecto_codigo='$codigo'";
 

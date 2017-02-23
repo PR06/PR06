@@ -5,10 +5,10 @@ $password=$_POST['password'];
 
 include("conexion.php");
 
-$proceso= $conexion->query("SELECT * FROM tbl_profesor WHERE profesor_correo='$usuario' AND profesor_password ='$password'");
+$proceso= $conexion->query("SELECT * FROM tbl_proyectoprofesor WHERE pp_usuario='$usuario' AND pp_password ='$password'");
 
 if($resultado = mysqli_fetch_array($proceso)){
-	$_SESSION['profesor'] = $resultado['profesor_id'];
+	$_SESSION['profesor'] = $resultado['pp_id'];
 	header("Location: principal_profesor.php");
 	
 }else{

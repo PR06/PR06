@@ -41,7 +41,7 @@ if (isset($_SESSION['profesor'])){
 		<h2>Inicia Sessió</h2>
 			<form name="formulario" action="login.proc.php" method="POST">
 				<i class="fa fa-user fa-2x" aria-hidden="true"></i>
-				<input type="text" name="usuario" placeholder="Correu" size="15" maxlength="20" required=""><br/>
+				<input type="text" name="usuario" placeholder="Usuari" size="15" maxlength="20" required=""><br/>
 				
 				<i class="fa fa-key fa-2x" aria-hidden="true"></i>
 				<input type="password" name="password" placeholder="Clau" size="15" maxlength="30" required=""><br/>

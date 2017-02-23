@@ -5,6 +5,7 @@ session_start();
 if(isset($_SESSION['profesor'])){
 	//echo "Bienvenidos Tribunal  ";
 	echo "<a href='cerrar_sesion.proc.php'><i class='fa fa-sign-out fa-2x' aria-hidden='true' title='Logout'></i></a><br/>";
+	$id = $_SESSION['profesor'];
 } else {
 	header("Location: ../index.html");
 }
@@ -22,6 +23,42 @@ if(isset($_SESSION['profesor'])){
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script type="text/javascript">
+			
+			function objetoAjax(){
+					var xmlhttp=false;
+					try {
+						xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+					} catch (e) {
+				 
+						try {
+							xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+						} catch (E) {
+							xmlhttp = false;
+						}
+					}
+				 
+					if (!xmlhttp && typeof XMLHttpRequest!='undefined') {
+					  xmlhttp = new XMLHttpRequest();
+					}
+					return xmlhttp;
+				}
+
+				function enviarDatos(url, id){
+			
+				  var ajax=objetoAjax();
+				 
+				  ajax.open("POST", url,true);
+				  ajax.onreadystatechange=function() {
+				  	if (ajax.readyState==4) {
+						document.getElementById('main').innerHTML = ajax.responseText;
+					}
+				  }
+				ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  				ajax.send("id="+id);
+				}
+
+		</script>
 	</head>
 	<body>
 		<!-- Wrapper -->
@@ -29,16 +66,16 @@ if(isset($_SESSION['profesor'])){
 		<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li><a href="#intro" class="active">Projectes</a></li>
-							<li><a href="#first">Notes</a></li>
-							<li><a href="#cta">Estadístiques</a></li>
+							<li><a href="#" id="1" onclick="enviarDatos('profesor_proyecto.php', <?php echo $id;?>);">Projectes</a></li>
+							<li><a href="#" id="2">Notes</a></li>
+							<li><a href="#" id="3">Estadístiques</a></li>
 						</ul>
 					</nav>
 
 
 				<div id="main">
 
-            </div>
+            	</div>
             </div>
 
 		<!-- Footer -->

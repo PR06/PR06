@@ -4,13 +4,20 @@
 
 	include 'conexion.php';
 
-	$sql_proyectos = "SELECT * FROM tbl_proyecto LEFT JOIN tbl_profesor ON tbl_profesor.profesor_id = tbl_proyecto.proyecto_tutor ORDER BY proyecto_fecha ASC";
+	if ($filtro==1){
+
+		$sql_proyectos = "SELECT * FROM tbl_proyecto LEFT JOIN tbl_profesor ON tbl_profesor.profesor_id = tbl_proyecto.proyecto_tutor ORDER BY proyecto_fecha ASC";
+	
+	} else {
+		$sql_proyectos = "SELECT * FROM tbl_proyecto LEFT JOIN tbl_profesor ON tbl_profesor.profesor_id = tbl_proyecto.proyecto_tutor ORDER BY proyecto_nombre ASC";
+	}
+
 	$proyectos = mysqli_query($conexion, $sql_proyectos);
 
 ?>
 <form>
 	Ordenar proyecte per:
-	<select id="filtro" name="filtro" onchange="filtrarProyecto(<?php echo $id;?>);;">
+	<select id="filtro" name="filtro" onchange="filtrarProyecto();">
 		<option value="1">Data</option>
 		<option value="2">A-Z</option>
 	</select>
@@ -77,12 +84,5 @@
 	} else {
 		echo "No hi ha cap projecte";
 	}
-
-	
-		
-
-
-
-
 
 ?>

@@ -59,10 +59,26 @@ if(isset($_SESSION['profesor'])){
 				}
 
 
+				function filtrarProyecto(id){
+					 var ajax=objetoAjax();
+
+					var filtro = document.getElementById('filtro').value;
+				 
+				  ajax.open("POST", 'filtrarProyecto.php',true);
+				  ajax.onreadystatechange=function() {
+				  	if (ajax.readyState==4) {
+						document.getElementById('main').innerHTML = ajax.responseText;
+					}
+				  }
+				ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  				ajax.send("filtro="+filtro+"&id="+id);
+				}
+
 
 				function noVot(){
 					alert("No pots valorar aquest projecte");
 				}
+
 
 		window.onload = enviarDatos('profesor_proyecto.php', <?php echo $id;?>); 		
 		</script>
@@ -74,8 +90,8 @@ if(isset($_SESSION['profesor'])){
 					<nav id="nav">
 						<ul>
 							<li><a href="#" id="1" onclick="enviarDatos('profesor_proyecto.php', <?php echo $id;?>);">Projectes</a></li>
-							<li><a href="#" id="2">Notes</a></li>
-							<li><a href="#" id="3">Estadístiques</a></li>
+							<li><a href="#" id="2" onclick="enviarDatos('profesor_notas.php', <?php echo $id;?>);">Notes</a></li>
+							<li><a href="#" id="3" onclick="enviarDatos('profesor_estadisticas.php', <?php echo $id;?>);">Estadístiques</a></li>
 						</ul>
 					</nav>
 

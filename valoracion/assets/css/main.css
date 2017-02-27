@@ -3903,3 +3903,12 @@ max-width: 15%;
 	margin-top:2%; 
 	margin-left: 15%;
 }
+
+.tablaAlumno{
+	color: black;
+	background-color: #38eeff;
+	border-collapse: collapse;
+	text-align: justify; 	
+	width: 70%;	
+	margin: auto;
+}

@@ -95,7 +95,7 @@
 					<table >
 						<tr>
 							<td></td>
-							<td><img src=":-)" width="50"></td>
+							<td><img src="../images/1.png" width="50"></td>
 							<td><img src="../images/3.png" width="50"></td>
 							<td><img src="../images/3.png" width="50"></td>
 							<td><img src="../images/3.png" width="50"></td>

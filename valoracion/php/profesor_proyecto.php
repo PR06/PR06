@@ -72,18 +72,20 @@
 						echo "<b>Estat del projecte:</b> ";
 							if ($proyecto['proyecto_estado']=='empezar'){
 								echo "Per començar";
+								echo "<div class='valorar'>";
+									echo "<a style='color:green;' href='formulario_tribu.proc.php?id=$proyecto[proyecto_id]'>Valorar</a>";
+								echo "</div>";
 							} else if ($proyecto['proyecto_estado']=='encurso'){
 								echo "En curs";
+								echo "<div class='valorar'>";
+									echo "<a style='color:green;' href='formulario_tribu.php?id=$proyecto[proyecto_id]'>Valorar</a>";
+								echo "</div>";
 							} else {
 								echo "Finalitzat";
+								echo "<div class='valorar'>";
+									echo "<a style='color:red;' href='#'>Projecte finalitzat</a>";
+								echo "</div>";
 							}
-						echo "<div class='valorar'>";
-							if ($pp_id == $id){
-								echo "<a style='color:green;' href='formulario_tribu.php?id=$proyecto[proyecto_id]'>Valorar</a>";
-							} else {
-								echo "<span style='color:red'>No pots valorar aquest projecte</span>";
-							}
-							echo "</div>";
 
 					echo "</div>";
 
@@ -143,11 +145,7 @@
 								echo "Finalitzat";
 							}
 						echo "<div class='valorar'>";
-							if ($pp_id == $id){
-								echo "<a style='color:green;' href='#'>Valorar</a>";
-							} else {
-								echo "<span style='color:red'>No pots valorar aquest projecte</span>";
-							}
+								echo "<a style='color:red' href='#'>No pots valorar aquest projecte</a>";
 							echo "</div>";
 
 					echo "</div>";

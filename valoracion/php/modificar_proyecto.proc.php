@@ -2,8 +2,8 @@
 include 'conexion.php';
 $proyecto_id= $_REQUEST['proyecto_id'];
 $proyecto_nombre= $_POST['proyecto_nombre'];
-$proyecto_imagen= $_POST['proyecto_imagen'];
-$proyecto_fecha= $_POST['proyecto_fecha'];
+//$proyecto_imagen= $_FILES['proyecto_imagen'];
+$proyecto_fecha= date("Y-m-d H:i:s", strtotime ($_POST['proyecto_fecha']));
 $proyecto_nota = $_POST['proyecto_nota'];
 $proyecto_tutor= $_POST['proyecto_tutor'];
 $proyecto_comentarioTribunal = $_POST['proyecto_comentarioTribunal'];
@@ -11,7 +11,7 @@ $proyecto_estado = $_POST['proyecto_estado'];
 $proyecto_codigo= $_POST['proyecto_codigo'];
 
 
-$query="UPDATE tbl_proyecto SET proyecto_nombre='$proyecto_nombre', proyecto_fecha='$proyecto_fecha', proyecto_nota='$proyecto_nota', proyecto_tutor=$proyecto_tutor, proyecto_comentarioTribunal=$proyecto_comentarioTribunal, proyecto_estado=$proyecto_estado, proyecto_codigo=$proyecto_codigo WHERE proyecto_id='$proyecto_id' ";
+$query="UPDATE tbl_proyecto SET proyecto_nombre='$proyecto_nombre', proyecto_fecha='$proyecto_fecha', proyecto_nota='$proyecto_nota', proyecto_tutor='$proyecto_tutor', proyecto_comentarioTribunal='$proyecto_comentarioTribunal', proyecto_estado='$proyecto_estado', proyecto_codigo='$proyecto_codigo' WHERE proyecto_id='$proyecto_id' ";
 echo $query;
 $resultado = $conexion->query($query);
 

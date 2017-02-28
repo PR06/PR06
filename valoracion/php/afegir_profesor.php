@@ -36,7 +36,7 @@ Tancar sessió'></i></a><br/>";
 	<input type="text" name="profesor_nombre" placeholder="Nom del nou Profesor" value="" required>
 	<input type="text" name="profesor_apellido" placeholder="Cognom del nou Profesor" value="" required>
 	<input type="text" name="profesor_correo" placeholder="Correu del nou Profesor" value="" required>
-	<input type="text" name="profesor_password" placeholder="Password del nou Profesor" value="" required>
+	
 	<input type="submit" value="Afegir">
 	</div>
 	</form>

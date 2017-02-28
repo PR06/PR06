@@ -48,6 +48,7 @@ Tancar sessió'></i></a><br/>";
 	<input type="text" name="proyecto_comentarioTribunal" placeholder="Comentari del tribunal" value="<?php echo $row['proyecto_comentarioTribunal']; ?>" required>
 	<input type="text" name="proyecto_estado" placeholder="Estat del Projecte" value="<?php echo $row['proyecto_estado']; ?>" required>
 	<input type="text" name="proyecto_codigo" placeholder="Codi Projecte" value="<?php echo $row['proyecto_codigo']; ?>" required>
+	Portada Projecte <input type="file" name="proyecto_imagen" title="Adjunta Portada Projecte"></br></br>
 	<input type="submit" value="Cambiar">
 	</div>
 	</form>

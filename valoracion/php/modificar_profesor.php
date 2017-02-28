@@ -44,7 +44,7 @@ Tancar sessió'></i></a><br/>";
 	<input type="text" name="profesor_nombre" placeholder="Nom Profesor" value="<?php echo $row['profesor_nombre']; ?>" required>
 	<input type="text" name="profesor_apellido" placeholder="Cognom Profesor" value="<?php echo $row['profesor_apellido']; ?>" required>
 	<input type="text" name="profesor_correo" placeholder="Correu Profesor" value="<?php echo $row['profesor_correo']; ?>" required>
-	<input type="text" name="profesor_password" placeholder="Password Profesor" value="<?php echo $row['profesor_password']; ?>" required>
+	
 	<input type="submit" value="Cambiar">
 	</div>
 	</form>

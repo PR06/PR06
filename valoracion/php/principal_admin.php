@@ -44,10 +44,13 @@ if(isset($_SESSION['admin'])){
 		</thead>
 		<tbody>
 			<tr>
+				<!--<td>ID</td>-->
 				<td>Nombre</td>
 				<td>Apellido</td>
 				<td>Correo</td>
-				<td>Password</td>
+				<td></td>
+				<td></td>
+				
 			</tr>
 			<?php
 			include("conexion.php");
@@ -56,11 +59,11 @@ if(isset($_SESSION['admin'])){
 			while($row=$resultado-> fetch_assoc()){
 			?>
 			<tr>
-			<td><?php echo $row['profesor_id']; ?></td>
+			<!--<td><?php echo $row['profesor_id']; ?></td>-->
 			<td><?php echo $row['profesor_nombre']; ?></td>
 			<td><?php echo $row['profesor_apellido']; ?></td>
 			<td><?php echo $row['profesor_correo']; ?></td>
-			<td><?php echo $row['profesor_password']; ?></td>
+			
 			<?php $profesor_id=$row['profesor_id']; ?>
 			
 
@@ -94,6 +97,7 @@ if(isset($_SESSION['admin'])){
 		</thead>
 		<tbody>
 			<tr>
+				<!--<td>ID projecte</td>-->
 				<td>Nom projecte</td>
 				<td>Imatge projecte</td>
 				<td>Data projecte</td>
@@ -102,6 +106,8 @@ if(isset($_SESSION['admin'])){
 				<td>Comentari tribunal</td>
 				<td>Estat del projecte</td>
 				<td>Codi del projecte</td>
+				<td></td>
+				<td></td>
 			</tr>
 			<?php
 			include("conexion.php");
@@ -110,7 +116,7 @@ if(isset($_SESSION['admin'])){
 			while($row=$resultado-> fetch_assoc()){
 			?>
 			<tr>
-			<td><?php echo $row['proyecto_id']; ?></td>
+			<!--<td><?php echo $row['proyecto_id']; ?></td>-->
 			<td><?php echo $row['proyecto_nombre']; ?></td>
 			<td><?php echo $row['proyecto_imagen']; ?></td>
 			<td><?php echo $row['proyecto_fecha']; ?></td>
@@ -152,10 +158,13 @@ if(isset($_SESSION['admin'])){
 		</thead>
 		<tbody>
 			<tr>
-				<td>Nom alumne</td>
+				<!--<td>ID alumne</td>-->
+				<td>Nom alumne</td></>
 				<td>Cognom alumne</td>
 				<td>Curs alumne</td>
 				<td>ID Projecte del alumne</td>
+				<td></td>
+				<td></td>
 			</tr>
 			<?php
 			include("conexion.php");
@@ -164,11 +173,11 @@ if(isset($_SESSION['admin'])){
 			while($row=$resultado-> fetch_assoc()){
 			?>
 			<tr>
-			<td><?php echo $row['alumno_id']; ?></td>
+			<!--<td><?php echo $row['alumno_id']; ?></td>-->
 			<td><?php echo $row['alumno_nombre']; ?></td>
 			<td><?php echo $row['alumno_apellido']; ?></td>
 			<td><?php echo $row['alumno_curso']; ?></td>
-
+			<td><?php echo $row['alumno_proyectoid']; ?></td>
 			<?php $alumno_id=$row['alumno_id']; ?>
 			
 

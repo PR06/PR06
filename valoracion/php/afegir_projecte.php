@@ -31,15 +31,16 @@ Tancar sessió'></i></a><br/>";
 	<div id="wrapper">
 		<!-- Nav -->
 	<h1>Afegir nou Projecte</h1>
-	<form action="afegir_projecte.proc.php" method="POST">
+	<form action="afegir_projecte.proc.php" enctype="multipart/form-data" method="POST">
 	<div>
 	<input type="text" name="proyecto_nombre" placeholder="Nom del nou Projecte" value="" required>
-	<input type="text" name="proyecto_fecha	" placeholder="Data del projecte" value="" required>
+	<input type="text" name="proyecto_fecha" placeholder="Data del projecte **AAAA-MM-DD**HH:MM:SS" value="" required>
 	<input type="text" name="proyecto_nota" placeholder="Nota del projecte" value="" required>
 	<input type="text" name="proyecto_tutor" placeholder="Tutor del projecte" value="" required>
 	<input type="text" name="proyecto_comentarioTribunal" placeholder="Comentari del tribunal" value="" required>
-	<input type="text" name="proyecto_estado" placeholder="Estat del projecte" value="" required>
+	<input type="text" name="" placeholder="En curso" value="" readonly="readonly">
 	<input type="text" name="proyecto_codigo" placeholder="Codi del projecte" value="" required>
+	Portada Projecte <input type="file" name="proyecto_imagen" title="Adjunta Portada Projecte"></br></br>
 	<input type="submit" value="Afegir">
 	</div>
 	</form>

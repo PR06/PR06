@@ -63,11 +63,12 @@ if(isset($_SESSION['profesor'])){
 					 var ajax=objetoAjax();
 
 					var filtro = document.getElementById('filtro').value;
+
 				 
 				  ajax.open("POST", 'filtrarProyecto.php',true);
 				  ajax.onreadystatechange=function() {
 				  	if (ajax.readyState==4) {
-						document.getElementById('main').innerHTML = ajax.responseText;
+						document.getElementById('main2').innerHTML = ajax.responseText;
 					}
 				  }
 				ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");

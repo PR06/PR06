@@ -10,6 +10,7 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 
+
 	</head>
 	<body>
 	
@@ -23,143 +24,115 @@
 
 		<!-- Nav -->
 			<nav id="nav">
-				Valoración del Público
+				Valoració del Públic
 			</nav>
 
 		<!-- Main -->
 			<div id="main">
-				<h2>Presentació Oral</h2>
-				<h3>1. T'ha quedat una idea de la part que ha exposat</h3>
+				<!-- Vizualizar la parte oral del publico -->
+				<?php
+				include 'conexion.php';
+				extract($_REQUEST);
+				$sql = "SELECT * FROM tbl_preguntapublico WHERE prpu_tipo = 'oral' ";
+				$preguntaOral = mysqli_query($conexion,$sql);
+
+				//echo "$sql";die;
+
+
+				echo "<h2><b><u>Presentació Oral</u></b></h2>";
+
+				while ($pregunta1 = mysqli_fetch_array($preguntaOral)) {
+					$sql_alumno = "SELECT * FROM tbl_alumno LEFT JOIN tbl_proyecto on tbl_proyecto.proyecto_id = tbl_alumno.alumno_proyectoid WHERE proyecto_id = '$id' ";
+				$alumnos = mysqli_query($conexion, $sql_alumno);
+				?>
+				
+				<h3><?php echo "$pregunta1[prpu_pregunta]"; ?></h3>
+					
 					<table >
 						<tr>
 							<td></td>
+							<td><img src="" width="50"></td>
 							<td><img src="../images/3.png" width="50"></td>
 							<td><img src="../images/3.png" width="50"></td>
 							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/10.png" width="50"></td>
 						</tr>
+					
+				<?php while($alumno = mysqli_fetch_array($alumnos)){ ?>
 						<tr style="height: 40px;">
-							<td>Javier</td>
-							<td><input type="radio" name="0"></td>
-							<td><input type="radio" name="2"></td>
-							<td><input type="radio" name="5"></td>
-							<td><input type="radio" name="7"></td>
-							<td><input type="radio" name="10"></td>
+							<td  id="alumno" name="alumno"><?php echo "$alumno[alumno_nombre]"; ?></td>
+							<td><input type="radio" value=0></td>
+							<td><input type="radio" value=2 ></td>
+							<td><input type="radio" value=5></td>
+							<td><input type="radio" value=7></td>
+							<td><input type="radio" value=10></td>
 						</tr>
+				<?php 
+				} 
+				?>
+					</table>
+				<?php 
+				}
+				?>
+				<!-- Vizualizar la parte del contenido del publico -->
+				<?php
+				include 'conexion.php';
+				extract($_REQUEST);
+				$sql = "SELECT * FROM tbl_preguntapublico WHERE prpu_tipo = 'contenido' ";
+				$preguntaOral = mysqli_query($conexion,$sql);
+
+			
+
+
+				echo "<h2><b><u>Continguts</u></b></h2>";
+
+				while ($pregunta1 = mysqli_fetch_array($preguntaOral)) {
+					$sql_alumno = "SELECT * FROM tbl_proyecto WHERE proyecto_id = '$id' ";
+				$alumnos = mysqli_query($conexion, $sql_alumno);
+				?>
+				
+				<h3><?php echo "$pregunta1[prpu_pregunta]"; ?></h3>
+					<table >
+						<tr>
+							<td></td>
+							<td><img src=":-)" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/3.png" width="50"></td>
+							<td><img src="../images/10.png" width="50"></td>
+						</tr>
+				<?php while($alumno = mysqli_fetch_array($alumnos)){ ?>
 						<tr style="height: 40px;">
-							<td>Javier</td>
-							<td><input type="radio" name="0"></td>
-							<td><input type="radio" name="2"></td>
-							<td><input type="radio" name="5"></td>
-							<td><input type="radio" name="7"></td>
-							<td><input type="radio" name="10"></td>
+							<td  id="alumno" name="alumno"><?php echo "$alumno[proyecto_nombre]"; ?></td>
+							<td><input type="radio" value=0></td>
+							<td><input type="radio" value=2></td>
+							<td><input type="radio" value=5></td>
+							<td><input type="radio" value=7></td>
+							<td><input type="radio" value=10></td>
 						</tr>
-						<tr style="height: 40px;">
-							<td>Javier</td>
-							<td><input type="radio" name="0"></td>
-							<td><input type="radio" name="2"></td>
-							<td><input type="radio" name="5"></td>
-							<td><input type="radio" name="7"></td>
-							<td><input type="radio" name="10"></td>
-						</tr>
+				<?php 
+				} 
+				?>
 					</table>
-				<h3>2. Com valores la seva expressió oral</h3>
-					<table >
-						<tr>
-							<td></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-						</tr>
-						<tr>
-							<td>Javier</td>
-							<td><input type="radio" name="0"></td>
-							<td><input type="radio" name="2"></td>
-							<td><input type="radio" name="5"></td>
-							<td><input type="radio" name="7"></td>
-							<td><input type="radio" name="10"></td>
-						</tr>
-					</table>
-				<h3>3. Creus que la presentació està ben estructurada</h3>
-					<table >
-						<tr>
-							<td></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-						</tr>
-						<tr>
-							<td>Javier</td>
-							<td><input type="radio" name="0"></td>
-							<td><input type="radio" name="2"></td>
-							<td><input type="radio" name="5"></td>
-							<td><input type="radio" name="7"></td>
-							<td><input type="radio" name="10"></td>
-						</tr>
-					</table>
-				<h2>Continguts</h2>
-				<h3>4. Com valores la qualitat del power-point, flash, etc que s'ha fet servir a l'exposició</h3><br/><br/>
-					<table >
-						<tr>
-							<td></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-						</tr>
-						<tr>
-							<td>Javier</td>
-							<td><input type="radio" name="0"></td>
-							<td><input type="radio" name="2"></td>
-							<td><input type="radio" name="5"></td>
-							<td><input type="radio" name="7"></td>
-							<td><input type="radio" name="10"></td>
-						</tr>
-					</table>
-				<h3>5. T'ha quedat clar el contingut del projecte</h3>
-					<table >
-						<tr>
-							<td></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-						</tr>
-						<tr>
-							<td>Javier</td>
-							<td><input type="radio" name="0"></td>
-							<td><input type="radio" name="2"></td>
-							<td><input type="radio" name="5"></td>
-							<td><input type="radio" name="7"></td>
-							<td><input type="radio" name="10"></td>
-						</tr>
-					</table>
-				<h3>6. Com valores la qualitat del projecte exposat</h3>
-					<table >
-						<tr>
-							<td></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-							<td><img src="../images/3.png" width="50"></td>
-						</tr>
-						<tr>
-							<td>Javier</td>
-							<td><input type="radio" name="0"></td>
-							<td><input type="radio" name="2"></td>
-							<td><input type="radio" name="5"></td>
-							<td><input type="radio" name="7"></td>
-							<td><input type="radio" name="10"></td>
-						</tr>
-					</table>
+				<?php 
+				}
+				?>
+				Nom del que avalua:
+				<input type="text" name="" required>
+				Cognoms del que avalua:
+				<input type="text" name="" required>
+				Tipus de públics:
+				<select required>
+					<option value="0">Elige una opción</option>
+					<option value="1">Alumno</option>
+					<option value="2">Otros</option>
+				</select>
+				Curso del Alumne:
+				<input type="text" name="">
+				Te han interessat el tema?
+				<textarea name="comentarios" rows="10" cols="20">Escribe aquí tus comentarios</textarea>
+				<input type="submit" name="">
+
 					
 					
 				

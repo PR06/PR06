@@ -19,9 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `bd_valoracionapp`
 --
-CREATE DATABASE IF NOT EXISTS `bd_valoracionapp` DEFAULT CHARACTER SET utf8 COLLATE utf8_spanish_ci;
-USE `bd_valoracionapp`;
-
 -- --------------------------------------------------------
 
 --
